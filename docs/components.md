@@ -64,39 +64,57 @@ The repository includes a whitepaper, deployment guide, API reference, UCKS sche
 
 ### Purpose
 
-Support the AI-enabled geometry-generation and geometry-interoperability dimension of the proposed STC-DT ecosystem.
+Support drone-to-BIM semantic segmentation and semantic processing for the AI-Enabled Geometry Generation and Interoperability dimension of STC-DT. The work builds on and is forked from the upstream [GARField codebase](https://github.com/chungmin99/garfield); not all source code in the component repository was newly authored by the component contributor.
 
 ### Current capabilities
 
-**Pending contributor confirmation**
+**CURRENT:** The public research prototype documents:
+
+- COLMAP structure-from-motion processing of drone imagery;
+- GARField neural-radiance-field grouping features;
+- GARField-Gauss / 3D Gaussian Splatting rendering;
+- orthographic projection of grouping features to point clouds;
+- Optuna-optimized HDBSCAN clustering;
+- semantic labeling with a fine-tuned SAM 3 model;
+- cluster-to-mask matching using intersection-over-union and majority voting;
+- semantic point-cloud generation; and
+- Snakemake orchestration of the documented pipeline stages.
 
 ### Status
 
-Public release in preparation
+Public research prototype; repository documentation and licensing are being finalized by the contributor. The repository is not presented as production-ready.
 
 ### Example input, process, and output
 
-**Pending contributor confirmation**
+- **Inputs:** drone images placed under a project image directory and dataset paths and parameters supplied through `pipeline/config.yaml`.
+- **Process:** COLMAP produces camera poses and a sparse point cloud; GARField and GARField-Gauss provide parallel grouping-feature and rendering branches; orthographic projection, Optuna/HDBSCAN clustering, fine-tuned SAM 3 labeling, and cluster-to-mask matching are orchestrated through Snakemake.
+- **Outputs:** documented final outputs include `semantic_pointcloud.ply`, `semantic_labels.json`, and per-class PLY files. Intermediate outputs include grouping features, cluster labels, clustered point clouds, optimization results, rendered labeling views, and segmentation masks.
 
 ### Formats or interfaces
 
-**Pending contributor confirmation**
+Documented formats and technologies include drone images, YAML configuration, NumPy arrays, PLY point clouds, JSON semantic labels, COLMAP, GARField, neural radiance fields, 3D Gaussian Splatting, Optuna, HDBSCAN, SAM 3, and Snakemake.
 
 ### Repository
 
-**Pending contributor confirmation**
+[github.com/Ehs9449/garfield](https://github.com/Ehs9449/garfield)
 
 ### Contributors
 
+**Ehsan Agha Ebrahimi** provided and is finalizing this component repository. The repository is a fork of [`chungmin99/garfield`](https://github.com/chungmin99/garfield) and retains upstream GARField code and attribution.
+
+### License
+
 **Pending contributor confirmation**
+
+The repository's current `LICENSE` contains inherited MIT license text and a UC Berkeley copyright notice from the upstream GARField codebase. This is not represented here as the finalized licensing structure for the component.
 
 ### Related publications
 
-**Pending contributor confirmation**
+The repository README provides a 2026 `@misc` citation for *Unsupervised Building Component Discovery via Orthographic Feature Projection from Neural Radiance Fields* and acknowledges the upstream GARField project. No additional component publication claim is made here.
 
 ### Relationship to STC-DT
 
-This is one of the three intended STC-DT components. Its future relationship to shared terminology, interfaces, or protocols must be defined and agreed upon by contributors. No implemented integration is currently claimed.
+This independently maintained research prototype is the proposed AI-Enabled Geometry Generation and Interoperability component of STC-DT. Its future relationship to shared terminology, interfaces, or protocols must be defined, documented, and validated with the other component contributors. No implemented technical integration or verified interoperability with the Knowledge Graph or Urban Digital Twin components is currently claimed.
 
 ## 3. Urban Digital Twin Interoperability
 
