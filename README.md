@@ -48,6 +48,8 @@ Dashed connections denote documentation relationships or planned work, not opera
 | AI-Enabled Geometry Generation and Interoperability | Public research prototype; documentation and licensing are being finalized | [garfield](https://github.com/Ehs9449/garfield)                                                                                               |
 | Urban Digital Twin Interoperability                 | Public open-source prototype; Apache-2.0; release `v0.1.0` | [Repository](https://github.com/vijaybkhot/urban-digital-twin-interoperability) · [Release](https://github.com/vijaybkhot/urban-digital-twin-interoperability/releases/tag/v0.1.0) · [Live demo](https://urban-digital-twin-interoperability.vercel.app/) |
 
+Each independently maintained component retains its own licensing and release practices; the STC-DT umbrella repository itself is licensed under Apache-2.0.
+
 See the [component registry](docs/components.md) for verified capabilities and explicit limitations.
 
 ## Documentation

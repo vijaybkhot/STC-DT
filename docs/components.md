@@ -110,7 +110,7 @@ The repository's current `LICENSE` contains inherited MIT license text and a UC 
 
 ### Related publications
 
-The repository README provides a 2026 `@misc` citation for *Unsupervised Building Component Discovery via Orthographic Feature Projection from Neural Radiance Fields* and acknowledges the upstream GARField project. No additional component publication claim is made here.
+The repository README currently provides a 2026 `@misc` citation entry for *Unsupervised Building Component Discovery via Orthographic Feature Projection from Neural Radiance Fields* and acknowledges the upstream GARField project. This entry is not represented as a confirmed archival publication; no archival publication is claimed unless contributor-confirmed.
 
 ### Relationship to STC-DT
 
@@ -175,4 +175,4 @@ The repository identifies itself as the intended Urban Digital Twin Interoperabi
 
 ### Verification basis
 
-This summary was reviewed against the component's public `main` branch README, architecture documentation, accepted urban-resilience data guardrails, roadmap, and contribution record at commit [`1350dd2`](https://github.com/vijaybkhot/urban-digital-twin-interoperability/commit/1350dd25e9d05d48776dba1c87f46265c380833d).
+This summary was reviewed against the component's public `main` branch, published [`v0.1.0`](https://github.com/vijaybkhot/urban-digital-twin-interoperability/releases/tag/v0.1.0) release at commit [`9b068f6`](https://github.com/vijaybkhot/urban-digital-twin-interoperability/commit/9b068f67faee8b3b4bf67eec97695848a1e8d889), relevant architecture and urban-resilience documentation, and public contribution record.
