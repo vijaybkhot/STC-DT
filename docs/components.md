@@ -1,0 +1,178 @@
+# Component Registry
+
+The STC-DT ecosystem is organized around three independently maintained components. This registry separates verified current information from planned relationships and details awaiting contributor confirmation.
+
+## 1. Knowledge Graph / Semantic Interoperability
+
+### Purpose
+
+The [AEC Knowledge Graph](https://github.com/halilyasavul/aec-knowledge-graph) is the Knowledge Graph / Semantic Interoperability component of STC-DT. Within its independently maintained repository, it provides semantic capabilities for built-environment entity definitions, properties, relationships, and exchange requirements.
+
+### Current capabilities
+
+**CURRENT:** The public prototype currently supports:
+
+- IFC 4.3 knowledge-graph generation in Neo4j;
+- natural-language querying grounded in graph data through GraphRAG;
+- conversational capture of new AEC concepts in the UCKS knowledge schema;
+- mapping from UCKS concepts to IFC; and
+- export of buildingSMART Information Delivery Specification (IDS) files validated against an XSD schema.
+
+### Status
+
+The component is a public open-source prototype. Release [`v0.1.0`](https://github.com/halilyasavul/aec-knowledge-graph/releases/tag/v0.1.0) is available under the Apache License 2.0. The [live demo](https://aec-knowledge-engine-16881077631.us-central1.run.app) is publicly accessible without an account.
+
+### Example input, process, and output
+
+- **Inputs:** IFC 4.3 bSDD JSON and EXPRESS schema data; natural-language IFC questions; plain-language descriptions of new AEC concepts; and UCKS YAML entities.
+- **Process:** schema ingestion into Neo4j, graph-grounded retrieval and querying, UCKS entity validation and mapping, and IDS generation with XSD validation.
+- **Outputs:** graph-grounded answers with supporting graph data; validated UCKS YAML and graph representations; and downloadable buildingSMART IDS XML. The repository includes worked prompts and a generated, XSD-validated IDS example.
+
+### Formats or interfaces
+
+Confirmed formats and technologies include IFC 4.3, bSDD JSON, EXPRESS, Neo4j and Cypher, GraphRAG, UCKS YAML, buildingSMART IDS XML and XSD, Python, Flask, and a Gemini-backed language-model agent.
+
+### Repository
+
+- Repository: [github.com/halilyasavul/aec-knowledge-graph](https://github.com/halilyasavul/aec-knowledge-graph)
+- Live demo: [aec-knowledge-engine-16881077631.us-central1.run.app](https://aec-knowledge-engine-16881077631.us-central1.run.app)
+
+### Contributors
+
+The component repository identifies **Halil Yasavul** as responsible for design and development. Its Git history preserves the development record, and contribution guidance is available in the repository.
+
+### Release and license
+
+- Current release: [`v0.1.0`](https://github.com/halilyasavul/aec-knowledge-graph/releases/tag/v0.1.0)
+- License: [Apache License 2.0](https://github.com/halilyasavul/aec-knowledge-graph/blob/main/LICENSE)
+
+### Testing and validation
+
+The automated pytest suite covers the EXPRESS parser, IDS generation, XSD validation, and UCKS schema models. GitHub Actions runs continuous integration on pushes and pull requests. Generated IDS files are validated against the buildingSMART `ids.xsd` before being returned.
+
+### Related documentation and publications
+
+The repository includes a whitepaper, deployment guide, API reference, UCKS schema draft, and `CITATION.cff`. No related project publication is currently listed.
+
+### Relationship to STC-DT
+
+**CURRENT:** The component independently implements the semantic and knowledge-graph capabilities described above within its own repository and serves as the Knowledge Graph / Semantic Interoperability component of STC-DT.
+
+**PLANNED:** Future work may allow the Geometry and Urban Digital Twin components to resolve definitions and exchange requirements through agreed formats or protocols. No technical integration with those components is currently claimed.
+
+## 2. AI-Enabled Geometry Generation and Interoperability
+
+### Purpose
+
+Support drone-to-BIM semantic segmentation and semantic processing for the AI-Enabled Geometry Generation and Interoperability dimension of STC-DT. The work builds on and is forked from the upstream [GARField codebase](https://github.com/chungmin99/garfield); not all source code in the component repository was newly authored by the component contributor.
+
+### Current capabilities
+
+**CURRENT:** The public research prototype documents:
+
+- COLMAP structure-from-motion processing of drone imagery;
+- GARField neural-radiance-field grouping features;
+- GARField-Gauss / 3D Gaussian Splatting rendering;
+- orthographic projection of grouping features to point clouds;
+- Optuna-optimized HDBSCAN clustering;
+- semantic labeling with a fine-tuned SAM 3 model;
+- cluster-to-mask matching using intersection-over-union and majority voting;
+- semantic point-cloud generation; and
+- Snakemake orchestration of the documented pipeline stages.
+
+### Status
+
+Public research prototype; repository documentation and licensing are being finalized by the contributor. The repository is not presented as production-ready.
+
+### Example input, process, and output
+
+- **Inputs:** drone images placed under a project image directory and dataset paths and parameters supplied through `pipeline/config.yaml`.
+- **Process:** COLMAP produces camera poses and a sparse point cloud; GARField and GARField-Gauss provide parallel grouping-feature and rendering branches; orthographic projection, Optuna/HDBSCAN clustering, fine-tuned SAM 3 labeling, and cluster-to-mask matching are orchestrated through Snakemake.
+- **Outputs:** documented final outputs include `semantic_pointcloud.ply`, `semantic_labels.json`, and per-class PLY files. Intermediate outputs include grouping features, cluster labels, clustered point clouds, optimization results, rendered labeling views, and segmentation masks.
+
+### Formats or interfaces
+
+Documented formats and technologies include drone images, YAML configuration, NumPy arrays, PLY point clouds, JSON semantic labels, COLMAP, GARField, neural radiance fields, 3D Gaussian Splatting, Optuna, HDBSCAN, SAM 3, and Snakemake.
+
+### Repository
+
+[github.com/Ehs9449/garfield](https://github.com/Ehs9449/garfield)
+
+### Contributors
+
+**Ehsan Agha Ebrahimi** provided and is finalizing this component repository. The repository is a fork of [`chungmin99/garfield`](https://github.com/chungmin99/garfield) and retains upstream GARField code and attribution.
+
+### License
+
+**Pending contributor confirmation**
+
+The repository's current `LICENSE` contains inherited MIT license text and a UC Berkeley copyright notice from the upstream GARField codebase. This is not represented here as the finalized licensing structure for the component.
+
+### Related publications
+
+The repository README currently provides a 2026 `@misc` citation entry for *Unsupervised Building Component Discovery via Orthographic Feature Projection from Neural Radiance Fields* and acknowledges the upstream GARField project. This entry is not represented as a confirmed archival publication; no archival publication is claimed unless contributor-confirmed.
+
+### Relationship to STC-DT
+
+This independently maintained research prototype is the proposed AI-Enabled Geometry Generation and Interoperability component of STC-DT. Its future relationship to shared terminology, interfaces, or protocols must be defined, documented, and validated with the other component contributors. No implemented technical integration or verified interoperability with the Knowledge Graph or Urban Digital Twin components is currently claimed.
+
+## 3. Urban Digital Twin Interoperability
+
+### Purpose
+
+The [Urban Digital Twin Interoperability Research Prototype](https://github.com/vijaybkhot/urban-digital-twin-interoperability) investigates config-driven geospatial digital-twin visualization and interoperability. It separates public-data acquisition and scientific processing from structured domain state and visualization clients.
+
+### Current capabilities
+
+The public repository documents:
+
+- a React and TypeScript application with five isolated modes using a CesiumJS viewer boundary;
+- typed, viewer-independent domain contracts and provider interfaces;
+- browser-local image metadata and deterministic readiness checks without image upload;
+- mock agent and reconstruction providers, including a simulated reconstruction lifecycle;
+- visualization of configured GLB assets, annotations, and measurement links;
+- manual Node.js workflows that acquire, process, and validate OpenStreetMap, FEMA National Flood Hazard Layer, and USGS 3DEP information into committed local GeoJSON artifacts;
+- an implemented urban-resilience research scenario for Grand Isle, Port Fourchon, and selected Louisiana Highway 1 study areas; and
+- an isolated experimental ArcGIS SceneView client that consumes selected processed urban GeoJSON without recomputing classifications.
+
+### Status and limitations
+
+The project is a public open-source research prototype with explicitly identified mock, experimental, external, and planned elements. Release [`v0.1.0`](https://github.com/vijaybkhot/urban-digital-twin-interoperability/releases/tag/v0.1.0) is published under the Apache License 2.0, and the repository provides `CITATION.cff`.
+
+The [hosted Vercel demo](https://urban-digital-twin-interoperability.vercel.app/) remains a research demonstration; it is not an operational emergency-management or production system.
+
+It currently has no real LLM agent, connected COLMAP reconstruction backend, backend API, authentication, database, persisted project state, live sensors, or operational emergency feeds. Its public-data scenarios report mapped relationships and coverage, not current hazards, road conditions, evacuation guidance, or official determinations.
+
+### Example input, process, and output
+
+- **Inputs:** local JSON project configuration; selected local-image metadata; committed GeoJSON derived from OSM, FEMA NFHL, and USGS 3DEP sources; and configured GLB model assets.
+- **Process:** deterministic browser checks, local acquisition/build scripts, spatial processing, validators, typed domain logic, and viewer adapters.
+- **Outputs:** browser-rendered Cesium scenes, an experimental ArcGIS view, selectable details, validation logs, and documented contract examples. The browser workflow does not produce a real photogrammetric reconstruction.
+
+### Formats or interfaces
+
+Documented formats include JSON, GeoJSON, and viewer-ready GLB. PLY is recognized in reconstruction handoff documentation but is not rendered directly. Current external boundaries are `AgentProvider`, `ProjectConfigRepository`, `ReconstructionProvider`, and `ViewerAdapter`; the first and third do not represent connected production services.
+
+### Repository
+
+- Repository: [github.com/vijaybkhot/urban-digital-twin-interoperability](https://github.com/vijaybkhot/urban-digital-twin-interoperability)
+- Release: [`v0.1.0`](https://github.com/vijaybkhot/urban-digital-twin-interoperability/releases/tag/v0.1.0)
+- Live research demo: [urban-digital-twin-interoperability.vercel.app](https://urban-digital-twin-interoperability.vercel.app/)
+- License: [Apache License 2.0](https://github.com/vijaybkhot/urban-digital-twin-interoperability/blob/main/LICENSE)
+- Citation metadata: [`CITATION.cff`](https://github.com/vijaybkhot/urban-digital-twin-interoperability/blob/main/CITATION.cff)
+
+### Contributors
+
+The repository's verified [GitHub contribution record](https://github.com/vijaybkhot/urban-digital-twin-interoperability/graphs/contributors) lists [`vijaybkhot`](https://github.com/vijaybkhot) and [`zsradox`](https://github.com/zsradox) as contributors at the time of this review.
+
+### Related publications
+
+The repository provides `CITATION.cff`. No project-specific archival publication is currently claimed.
+
+### Relationship to STC-DT
+
+The repository identifies itself as the intended Urban Digital Twin Interoperability component. Its current contribution is an independent research testbed for geospatial-data integration, typed viewer boundaries, scientific provenance, visualization portability, and reproducible local datasets. It does not implement umbrella-level STC-DT integration.
+
+### Verification basis
+
+This summary was reviewed against the component's public `main` branch, published [`v0.1.0`](https://github.com/vijaybkhot/urban-digital-twin-interoperability/releases/tag/v0.1.0) release at commit [`9b068f6`](https://github.com/vijaybkhot/urban-digital-twin-interoperability/commit/9b068f67faee8b3b4bf67eec97695848a1e8d889), relevant architecture and urban-resilience documentation, and public contribution record.
