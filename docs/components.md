@@ -119,7 +119,9 @@ The public repository documents:
 
 ### Status and limitations
 
-The project is an implemented research prototype with explicitly identified mock, experimental, external, and planned elements. It is not a production digital-twin pipeline.
+The project is a public open-source research prototype with explicitly identified mock, experimental, external, and planned elements. Release [`v0.1.0`](https://github.com/vijaybkhot/urban-digital-twin-interoperability/releases/tag/v0.1.0) is published under the Apache License 2.0, and the repository provides `CITATION.cff`.
+
+The [hosted Vercel demo](https://urban-digital-twin-interoperability.vercel.app/) remains a research demonstration; it is not an operational emergency-management or production system.
 
 It currently has no real LLM agent, connected COLMAP reconstruction backend, backend API, authentication, database, persisted project state, live sensors, or operational emergency feeds. Its public-data scenarios report mapped relationships and coverage, not current hazards, road conditions, evacuation guidance, or official determinations.
 
@@ -135,7 +137,11 @@ Documented formats include JSON, GeoJSON, and viewer-ready GLB. PLY is recognize
 
 ### Repository
 
-[github.com/vijaybkhot/urban-digital-twin-interoperability](https://github.com/vijaybkhot/urban-digital-twin-interoperability)
+- Repository: [github.com/vijaybkhot/urban-digital-twin-interoperability](https://github.com/vijaybkhot/urban-digital-twin-interoperability)
+- Release: [`v0.1.0`](https://github.com/vijaybkhot/urban-digital-twin-interoperability/releases/tag/v0.1.0)
+- Live research demo: [urban-digital-twin-interoperability.vercel.app](https://urban-digital-twin-interoperability.vercel.app/)
+- License: [Apache License 2.0](https://github.com/vijaybkhot/urban-digital-twin-interoperability/blob/main/LICENSE)
+- Citation metadata: [`CITATION.cff`](https://github.com/vijaybkhot/urban-digital-twin-interoperability/blob/main/CITATION.cff)
 
 ### Contributors
 
@@ -143,7 +149,7 @@ The repository's verified [GitHub contribution record](https://github.com/vijayb
 
 ### Related publications
 
-The repository states that no project-specific archival publication, `CITATION.cff`, or archived software release is currently claimed.
+The repository provides `CITATION.cff`. No project-specific archival publication is currently claimed.
 
 ### Relationship to STC-DT
 
