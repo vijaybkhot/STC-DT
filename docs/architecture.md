@@ -15,25 +15,27 @@ The ecosystem has three levels:
 ```mermaid
 flowchart LR
     subgraph Current["CURRENT: independent repositories"]
-        KG[Knowledge Graph /<br/>Semantic Interoperability]
-        GEO[AI-Enabled Geometry Generation<br/>and Interoperability]
-        UDT[Urban Digital Twin<br/>Interoperability]
+        KG["Knowledge Graph /<br>Semantic Interoperability"]
+        GEO["AI-Enabled Geometry Generation<br>and Interoperability"]
+        UDT["Urban Digital Twin<br>Interoperability"]
     end
 
-    UMB[STC-DT umbrella<br/>Documentation and coordination]
+    UMB["STC-DT umbrella<br>Documentation and coordination"]
 
     subgraph Planned["PLANNED: shared foundation"]
-        FOUNDATION[Interfaces, protocols,<br/>conventions, and validation]
-        GOVERNANCE[Governance, security,<br/>and contributor practices]
+        FOUNDATION["Interfaces, protocols,<br>conventions, and validation"]
+        GOVERNANCE["Governance, security,<br>and contributor practices"]
     end
 
-    UMB -. describes and coordinates .-> KG
-    UMB -. describes and coordinates .-> GEO
-    UMB -. describes and coordinates .-> UDT
-    KG -. future agreement .-> FOUNDATION
-    GEO -. future agreement .-> FOUNDATION
-    UDT -. future agreement .-> FOUNDATION
-    UMB -. future agreement .-> GOVERNANCE
+    UMB -.-> KG
+    UMB -.-> GEO
+    UMB -.-> UDT
+
+    KG -.-> FOUNDATION
+    GEO -.-> FOUNDATION
+    UDT -.-> FOUNDATION
+
+    UMB -.-> GOVERNANCE
 ```
 
 Dashed connections represent documentation relationships or future design work. They do not represent working data exchanges or implemented dependencies.
@@ -42,7 +44,7 @@ Dashed connections represent documentation relationships or future design work. 
 
 Within the Knowledge Graph component, IFC 4.3 information from bSDD JSON and EXPRESS sources is ingested into Neo4j. The component supports graph-grounded language-model interaction, UCKS entity capture and UCKS-to-IFC mapping, and XSD-validated buildingSMART IDS export. These are internal component capabilities and do not constitute implemented cross-component integration.
 
-The AI-Enabled Geometry component architecture is **Pending contributor confirmation**.
+The AI-Enabled Geometry component currently provides an independently maintained research pipeline spanning COLMAP-based reconstruction, GARField and GARField-Gauss processing, feature clustering, SAM 3 semantic labeling, and semantic point-cloud generation. These are internal component capabilities and do not constitute umbrella-level integration.
 
 The Urban Digital Twin component currently provides an independent research prototype with viewer-neutral domain contracts, a CesiumJS viewer boundary, local public-data processing, validated JSON and GeoJSON artifacts, and an isolated ArcGIS visualization-portability experiment. These are internal capabilities of that component and do not constitute umbrella-level integration.
 

@@ -16,26 +16,28 @@ The repository gives users and contributors a common entry point and provides a 
 
 ```mermaid
 flowchart TB
-    U[Users and contributors] --> STC[STC-DT umbrella<br/>Documentation and coordination]
+    U["Users and contributors"] --> STC["STC-DT umbrella<br>Documentation and coordination"]
 
     subgraph Current["CURRENT: independently maintained components"]
-        KG[Knowledge Graph /<br/>Semantic Interoperability]
-        GEO[AI-Enabled Geometry Generation<br/>and Interoperability]
-        UDT[Urban Digital Twin<br/>Interoperability]
+        KG["Knowledge Graph /<br>Semantic Interoperability"]
+        GEO["AI-Enabled Geometry Generation<br>and Interoperability"]
+        UDT["Urban Digital Twin<br>Interoperability"]
     end
 
     subgraph Planned["PLANNED: shared ecosystem foundation"]
-        IP[Interoperability protocols<br/>and validation practices]
-        GP[Governance, security,<br/>and contributor practices]
+        IP["Interoperability protocols<br>and validation practices"]
+        GP["Governance, security,<br>and contributor practices"]
     end
 
-    STC -. documents and coordinates .-> KG
-    STC -. documents and coordinates .-> GEO
-    STC -. documents and coordinates .-> UDT
-    KG -. future agreement .-> IP
-    GEO -. future agreement .-> IP
-    UDT -. future agreement .-> IP
-    STC -. future agreement .-> GP
+    STC -.-> KG
+    STC -.-> GEO
+    STC -.-> UDT
+
+    KG -.-> IP
+    GEO -.-> IP
+    UDT -.-> IP
+
+    STC -.-> GP
 ```
 
 Dashed connections denote documentation relationships or planned work, not operational integration.
