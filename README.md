@@ -14,17 +14,7 @@ The repository gives users and contributors a common entry point and provides a 
 
 **PLANNED:** Contributors may establish shared terminology, interfaces, protocols, validation practices, governance, and security coordination through documented agreement and implementation evidence.
 
-```mermaid
-graph TB;
-    U[Users and contributors] --> STC[STC-DT documentation and coordination entry point];
-    STC -.-> KG[CURRENT Knowledge Graph and Semantic Interoperability];
-    STC -.-> GEO[CURRENT AI-Enabled Geometry Generation and Interoperability];
-    STC -.-> UDT[CURRENT Urban Digital Twin Interoperability];
-    KG -.-> IP[PLANNED shared interoperability protocols and validation practices];
-    GEO -.-> IP;
-    UDT -.-> IP;
-    STC -.-> GP[PLANNED governance security and contributor practices];
-```
+![STC-DT ecosystem diagram](docs/assets/stc-dt-ecosystem.svg)
 
 Dashed connections denote documentation relationships or planned work, not operational integration.
 

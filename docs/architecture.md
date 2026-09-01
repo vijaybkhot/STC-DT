@@ -12,16 +12,7 @@ The ecosystem has three levels:
 2. **The STC-DT umbrella**, providing shared navigation, documentation, coordination, and a place to record ecosystem decisions.
 3. **A planned interoperability foundation**, through which contributors may define shared terminology, interfaces, protocols, governance, security practices, and validation methods.
 
-```mermaid
-graph LR;
-    UMB[STC-DT documentation and coordination entry point] -.-> KG[CURRENT Knowledge Graph and Semantic Interoperability];
-    UMB -.-> GEO[CURRENT AI-Enabled Geometry Generation and Interoperability];
-    UMB -.-> UDT[CURRENT Urban Digital Twin Interoperability];
-    KG -.-> FOUNDATION[PLANNED shared interfaces protocols conventions and validation];
-    GEO -.-> FOUNDATION;
-    UDT -.-> FOUNDATION;
-    UMB -.-> GOVERNANCE[PLANNED governance security and contributor practices];
-```
+![STC-DT conceptual ecosystem architecture](assets/stc-dt-architecture.svg)
 
 Dashed connections represent documentation relationships or future design work. They do not represent working data exchanges or implemented dependencies.
 
