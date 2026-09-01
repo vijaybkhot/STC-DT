@@ -13,29 +13,14 @@ The ecosystem has three levels:
 3. **A planned interoperability foundation**, through which contributors may define shared terminology, interfaces, protocols, governance, security practices, and validation methods.
 
 ```mermaid
-flowchart LR
-    subgraph Current["CURRENT: independent repositories"]
-        KG["Knowledge Graph /<br>Semantic Interoperability"]
-        GEO["AI-Enabled Geometry Generation<br>and Interoperability"]
-        UDT["Urban Digital Twin<br>Interoperability"]
-    end
-
-    UMB["STC-DT umbrella<br>Documentation and coordination"]
-
-    subgraph Planned["PLANNED: shared foundation"]
-        FOUNDATION["Interfaces, protocols,<br>conventions, and validation"]
-        GOVERNANCE["Governance, security,<br>and contributor practices"]
-    end
-
-    UMB -.-> KG
-    UMB -.-> GEO
-    UMB -.-> UDT
-
-    KG -.-> FOUNDATION
-    GEO -.-> FOUNDATION
-    UDT -.-> FOUNDATION
-
-    UMB -.-> GOVERNANCE
+graph LR;
+    UMB[STC-DT documentation and coordination entry point] -.-> KG[CURRENT Knowledge Graph and Semantic Interoperability];
+    UMB -.-> GEO[CURRENT AI-Enabled Geometry Generation and Interoperability];
+    UMB -.-> UDT[CURRENT Urban Digital Twin Interoperability];
+    KG -.-> FOUNDATION[PLANNED shared interfaces protocols conventions and validation];
+    GEO -.-> FOUNDATION;
+    UDT -.-> FOUNDATION;
+    UMB -.-> GOVERNANCE[PLANNED governance security and contributor practices];
 ```
 
 Dashed connections represent documentation relationships or future design work. They do not represent working data exchanges or implemented dependencies.
