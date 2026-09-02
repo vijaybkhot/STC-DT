@@ -2,13 +2,15 @@
 
 ## Current state
 
-**CURRENT:** The three STC-DT components are independently maintained projects. This repository does not claim a shared API, schema, protocol, exchange format, identity mechanism, deployment environment, or automated end-to-end workflow across them.
+**CURRENT:** The four STC-DT components are independently maintained projects. This repository does not claim a shared API, schema, protocol, exchange format, identity mechanism, deployment environment, or automated end-to-end workflow across them.
 
 The Urban Digital Twin component contains internal typed boundaries, data-processing workflows, and a visualization-portability experiment. Those component-level capabilities do not establish interoperability with the other STC-DT components.
 
-The Knowledge Graph component currently uses and exposes semantic information and exchange artifacts, including IFC-related schema information, UCKS YAML, and buildingSMART IDS XML. These are component-level capabilities; no operational exchange with the Geometry or Urban Digital Twin components is currently claimed.
+The Knowledge Graph component currently uses and exposes semantic information and exchange artifacts, including IFC-related schema information, UCKS YAML, and buildingSMART IDS XML. These are component-level capabilities; no operational exchange with the Geometry, Urban Digital Twin, or CCDT components is currently claimed.
 
-Current interoperability information for the AI-Enabled Geometry component is **Pending contributor confirmation**.
+The AI-Enabled Geometry component currently documents internal processing boundaries and artifacts including imagery, YAML configuration, NumPy arrays, PLY point clouds, and JSON semantic labels. These component-level capabilities do not establish operational interoperability with the other STC-DT components.
+
+The CCDT component currently uses in-memory Python models for its internal six-twin reference system. Its CDE abstraction, data schemas, external adapters, and import/export or message interfaces remain planned; no operational exchange with the other STC-DT components is currently claimed.
 
 ## Planned direction
 
