@@ -4,7 +4,7 @@ This roadmap describes proposal-stage directions rather than guaranteed delivera
 
 ## Proposal stage
 
-- Complete confirmation of the AI-Enabled Geometry component when Ehsan provides its public release information; the Knowledge Graph and Urban Digital Twin registry entries are already verified.
+- Complete confirmation of the AI-Enabled Geometry component when Ehsan provides its public release information; the Knowledge Graph, Urban Digital Twin, and CCDT registry entries are already verified.
 - Maintain the umbrella repository as the public documentation and coordination entry point.
 - Preserve explicit labels for current, planned, experimental, and proposed work.
 - Identify initial interoperability use cases without assuming a technical solution.
@@ -15,7 +15,7 @@ This roadmap describes proposal-stage directions rather than guaranteed delivera
 ## Near-term ecosystem goals
 
 - Document representative component inputs, outputs, formats, and boundaries.
-- Identify overlaps, gaps, and dependencies across the three component domains.
+- Identify overlaps, gaps, and dependencies across the four component domains.
 - Define requirements for provenance, metadata, validation, security, and privacy.
 - Investigate candidate shared interface or exchange conventions.
 - Establish versioning, compatibility, and change-review practices.

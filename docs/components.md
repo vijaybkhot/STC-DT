@@ -1,6 +1,6 @@
 # Component Registry
 
-The STC-DT ecosystem is organized around three independently maintained components. This registry separates verified current information from planned relationships and details awaiting contributor confirmation.
+The STC-DT ecosystem is organized around four independently maintained components. This registry separates verified current information from planned relationships and details awaiting contributor confirmation.
 
 ## 1. Knowledge Graph / Semantic Interoperability
 
@@ -58,7 +58,7 @@ The repository includes a whitepaper, deployment guide, API reference, UCKS sche
 
 **CURRENT:** The component independently implements the semantic and knowledge-graph capabilities described above within its own repository and serves as the Knowledge Graph / Semantic Interoperability component of STC-DT.
 
-**PLANNED:** Future work may allow the Geometry and Urban Digital Twin components to resolve definitions and exchange requirements through agreed formats or protocols. No technical integration with those components is currently claimed.
+**PLANNED:** Future work may allow the Geometry, Urban Digital Twin, and CCDT components to resolve definitions and exchange requirements through agreed formats or protocols. No technical integration with those components is currently claimed.
 
 ## 2. AI-Enabled Geometry Generation and Interoperability
 
@@ -114,7 +114,7 @@ The repository README currently provides a 2026 `@misc` citation entry for *Unsu
 
 ### Relationship to STC-DT
 
-This independently maintained research prototype is the proposed AI-Enabled Geometry Generation and Interoperability component of STC-DT. Its future relationship to shared terminology, interfaces, or protocols must be defined, documented, and validated with the other component contributors. No implemented technical integration or verified interoperability with the Knowledge Graph or Urban Digital Twin components is currently claimed.
+This independently maintained research prototype is the proposed AI-Enabled Geometry Generation and Interoperability component of STC-DT. Its future relationship to shared terminology, interfaces, or protocols must be defined, documented, and validated with the other component contributors. No implemented technical integration or verified interoperability with the Knowledge Graph, Urban Digital Twin, or CCDT components is currently claimed.
 
 ## 3. Urban Digital Twin Interoperability
 
@@ -176,3 +176,73 @@ The repository identifies itself as the intended Urban Digital Twin Interoperabi
 ### Verification basis
 
 This summary was reviewed against the component's public `main` branch, published [`v0.1.0`](https://github.com/vijaybkhot/urban-digital-twin-interoperability/releases/tag/v0.1.0) release at commit [`9b068f6`](https://github.com/vijaybkhot/urban-digital-twin-interoperability/commit/9b068f67faee8b3b4bf67eec97695848a1e8d889), relevant architecture and urban-resilience documentation, and public contribution record.
+
+## 4. Coupled–Composable Digital Twin / Off-Site Construction
+
+### Purpose
+
+The [Coupled–Composable Digital Twin (CCDT) Framework for Off-Site Construction](https://github.com/m-daqdouq/Coupled-Composable-Digital-Twin-Framework-for-Off-Site-Construction) investigates coordination among multiple semi-independent digital twins in off-site construction, with emphasis on cross-twin interactions, probabilistic reasoning, and system-of-systems decision support. Its initial reference use case is modular/manufactured housing.
+
+### Current capabilities and documented current state
+
+**CURRENT:** The public early research prototype currently provides:
+
+- an in-memory Python registry and coordination layer for six reference twins: Planning, Procurement, Components Fabrication, Modules Manufacturing, Logistics, and Assembly;
+- a generalized twin state tuple with digital, physical, sensor, action, reward, and event fields, plus timestamped state updates, event logging, snapshots, and timestep advancement;
+- representations for PT–PT, DT–DT, PT–DT, and DT–PT interactions, including designed-versus-hidden flags and interaction filtering;
+- initial research algorithms for Planning/Assembly schedule divergence, discrete Bayesian filtering of logistics state, probability-weighted assembly forecasts, mutual-information dependency detection, physical-coupling prediction, and rework/capacity/delivery-risk calculations; and
+- a runnable 50-home / 200-module manufactured-housing demonstration using reference assumptions and synthetic demonstration parameters.
+
+The documented research framework additionally frames temporal and cross-twin reasoning through Probabilistic Graphical Model and Dynamic Bayesian Network concepts and identifies six KPI domains: Cost, Time, Quality, Sustainability, Risk, and Safety. A fully integrated temporal PGM/DBN and KPI evaluation layer are not current implementations.
+
+### Status
+
+The README describes the repository as an **early research prototype / open-source foundation (v0.1)** and explicitly states that it is not a production control system. The repository has package and citation metadata at version `0.1.0`, but no tag or formal GitHub Release is currently published.
+
+### Example input, process, and output
+
+- **Inputs:** in-memory Python dictionaries for twin states, events, prior and transition probabilities, sensor likelihoods, schedule values, and demonstration coefficients.
+- **Process:** build the six-twin reference system, register the four interaction classes, evaluate schedule synchronization, update a logistics posterior from sensor evidence, propagate expected delay to an assembly forecast, and estimate rework-related capacity and delivery risk.
+- **Outputs:** Python objects and dictionaries for twin state, interaction and event records, posterior probabilities, schedule-sync results, forecast values, and risk estimates; the included example prints a concise demonstration summary.
+
+The repository states that its demonstration probabilities, coefficients, thresholds, and scenario parameters are not empirically calibrated unless supporting validation data are added.
+
+### Formats or interfaces
+
+The current package targets Python 3.10 or newer and uses Python dataclasses, dictionaries, and enums as in-memory interfaces. JSON schemas, external platform import/export, message/event interfaces, BIM/IFC, GIS, GPS/RFID/IoT adapters, and a Common Data Environment abstraction remain planned.
+
+### Repository
+
+- Repository: [github.com/m-daqdouq/Coupled-Composable-Digital-Twin-Framework-for-Off-Site-Construction](https://github.com/m-daqdouq/Coupled-Composable-Digital-Twin-Framework-for-Off-Site-Construction)
+- License file: [Apache License 2.0](https://github.com/m-daqdouq/Coupled-Composable-Digital-Twin-Framework-for-Off-Site-Construction/blob/main/LICENSE)
+- Citation metadata: [`CITATION.cff`](https://github.com/m-daqdouq/Coupled-Composable-Digital-Twin-Framework-for-Off-Site-Construction/blob/main/CITATION.cff)
+- Architecture documentation: [`docs/architecture.md`](https://github.com/m-daqdouq/Coupled-Composable-Digital-Twin-Framework-for-Off-Site-Construction/blob/main/docs/architecture.md)
+- Roadmap: [`ROADMAP.md`](https://github.com/m-daqdouq/Coupled-Composable-Digital-Twin-Framework-for-Off-Site-Construction/blob/main/ROADMAP.md)
+
+### Contributors and maintainers
+
+The repository README identifies **Mohannad Daqdouq** and **Yongcheol Lee**, both affiliated there with Louisiana State University. Its package and citation metadata list both as authors.
+
+### License and release
+
+An Apache License 2.0 `LICENSE` file is present, and the package and citation metadata identify `Apache-2.0`. The README describes Apache-2.0 as planned for the initial public release, while the roadmap records the licensing foundation as implemented. No tag or formal GitHub Release is currently published, so the repository's v0.1/`0.1.0` metadata is not represented here as a published release.
+
+### Testing and validation
+
+Seven pytest tests cover the six-twin reference system, all four interaction types, state updates and event logging, schedule divergence and reconciliation, Bayesian sensor updates and assembly cross-updates, mutual-information dependency detection, and PT–PT / DT–PT ripple models. GitHub Actions is configured to run the suite on Python 3.10, 3.11, and 3.12.
+
+These tests verify the initial implementation mechanics and numerical examples; they do not establish empirical calibration, production readiness, or cross-project validation.
+
+### Related documentation and publications
+
+The repository includes architecture documentation, `ROADMAP.md`, and `CITATION.cff`. The README says the implementation aligns with a CCDT Rev10 study manuscript and that citation metadata will be updated when the associated manuscript/repository release is finalized; no finalized archival publication is claimed here.
+
+### Relationship to STC-DT
+
+**CURRENT:** CCDT adds a multi-digital-twin / system-of-systems research perspective to the STC-DT umbrella as an independently maintained component. No implemented technical integration with the Knowledge Graph, Geometry, or Urban Digital Twin components is currently claimed.
+
+**PLANNED:** The CCDT roadmap identifies further composable-twin lifecycle work, inferred interaction graphs and alerts, integrated temporal PGM/DBN cross-updates, CDE and data-exchange abstractions, external adapters, calibration, validation, optimization, and production hardening. These remain component-level research plans and do not imply an adopted STC-DT interface or working cross-component integration.
+
+### Verification basis
+
+This summary was reviewed against the component's public `main` branch at commit [`1c25c07`](https://github.com/m-daqdouq/Coupled-Composable-Digital-Twin-Framework-for-Off-Site-Construction/commit/1c25c07510727075779be935166bb888a298c1a0), including its README, license and notice files, repository structure, source package, example, tests, CI workflow, architecture documentation, roadmap, package metadata, and citation metadata. GitHub repository metadata and the tags and releases endpoints were also checked for release status.

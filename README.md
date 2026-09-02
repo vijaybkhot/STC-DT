@@ -1,10 +1,11 @@
 # Socio-Technical Cyberinfrastructure for Digital Twins (STC-DT)
 
-STC-DT is an umbrella open-source ecosystem that provides a unified entry point to three independently maintained digital-twin research components.
+STC-DT is an umbrella open-source ecosystem that provides a unified entry point to four independently maintained digital-twin research components.
 
 1. Knowledge Graph / Semantic Interoperability
 2. AI-Enabled Geometry Generation and Interoperability
 3. Urban Digital Twin Interoperability
+4. Coupled–Composable Digital Twin Framework for Off-Site Construction
 
 The repository gives users and contributors a common entry point and provides a foundation for future shared interoperability protocols, development practices, governance, security, contributor workflows, and long-term sustainability.
 
@@ -25,6 +26,7 @@ Dashed connections denote documentation relationships or planned work, not opera
 | Knowledge Graph / Semantic Interoperability         | Public open-source prototype; Apache-2.0; release `v0.1.0` | [Repository](https://github.com/halilyasavul/aec-knowledge-graph) · [Live demo](https://aec-knowledge-engine-16881077631.us-central1.run.app) |
 | AI-Enabled Geometry Generation and Interoperability | Public research prototype; documentation and licensing are being finalized | [garfield](https://github.com/Ehs9449/garfield)                                                                                               |
 | Urban Digital Twin Interoperability                 | Public open-source prototype; Apache-2.0; release `v0.1.0` | [Repository](https://github.com/vijaybkhot/urban-digital-twin-interoperability) · [Release](https://github.com/vijaybkhot/urban-digital-twin-interoperability/releases/tag/v0.1.0) · [Live demo](https://urban-digital-twin-interoperability.vercel.app/) |
+| Coupled–Composable Digital Twin / Off-Site Construction | Early research prototype / open-source foundation (v0.1); Apache-2.0 `LICENSE` present; no formal GitHub Release | [Repository](https://github.com/m-daqdouq/Coupled-Composable-Digital-Twin-Framework-for-Off-Site-Construction) |
 
 Each independently maintained component retains its own licensing and release practices; the STC-DT umbrella repository itself is licensed under Apache-2.0.
 

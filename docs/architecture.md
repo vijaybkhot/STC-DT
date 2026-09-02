@@ -2,7 +2,7 @@
 
 ## Purpose
 
-STC-DT provides a conceptual framework for coordinating three independently maintained research components. This architecture is an ecosystem model for proposal and planning purposes, not a description of an implemented cross-repository system.
+STC-DT provides a conceptual framework for coordinating four independently maintained research components. This architecture is an ecosystem model for proposal and planning purposes, not a description of an implemented cross-repository system.
 
 ## Conceptual structure
 
@@ -23,6 +23,8 @@ Within the Knowledge Graph component, IFC 4.3 information from bSDD JSON and EXP
 The AI-Enabled Geometry component currently provides an independently maintained research pipeline spanning COLMAP-based reconstruction, GARField and GARField-Gauss processing, feature clustering, SAM 3 semantic labeling, and semantic point-cloud generation. These are internal component capabilities and do not constitute umbrella-level integration.
 
 The Urban Digital Twin component currently provides an independent research prototype with viewer-neutral domain contracts, a CesiumJS viewer boundary, local public-data processing, validated JSON and GeoJSON artifacts, and an isolated ArcGIS visualization-portability experiment. These are internal capabilities of that component and do not constitute umbrella-level integration.
+
+The Coupled–Composable Digital Twin (CCDT) component currently provides an independent early research prototype for a six-twin manufactured-housing system-of-systems, with in-memory twin state and interaction models plus initial schedule, probabilistic, hidden-dependency, and ripple-risk algorithms. These are internal research capabilities of that component and do not constitute umbrella-level integration.
 
 ## Architectural principles
 
